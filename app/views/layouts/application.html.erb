@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name, style: "color: #{name == 'notice' ? 'green' : 'red'}" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
